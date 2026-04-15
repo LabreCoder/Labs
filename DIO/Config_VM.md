@@ -115,9 +115,11 @@ Se houver resposta, as máquinas estão conectadas com sucesso e já podemos ir 
 
 ---
 
-- Para visualizar o **guia** sobre ataques de Brute Force, basta clicar *[aqui](./README.md)*.
+### Links
 
-- Para visualizar os **objetivos** do exercício, basta clicar *[aqui](./Targets.md)*.
+- Para visualizar os **objetivos** do exercício, basta clicar *[aqui](./README.md)*.
+
+- Para visualizar o **guia** sobre ataques de Brute Force, basta clicar *[aqui](./Guide.md)*.
 
 - Para visualizar a **resolução** do exercício, basta clicar *[aqui](./Report.md)*.
 
