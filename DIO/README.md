@@ -1,4 +1,4 @@
-# 🧪 Guia Prático — Brute Force com Medusa em Ambiente Controlado
+# 💻 Guia Prático — Brute Force com Medusa em Ambiente Controlado
 
 ## 🎯 Objetivos do Exercício
 
@@ -11,15 +11,13 @@ Ao longo do exercício, serão explorados conceitos de:
 * Exploração de autenticação fraca
 * Integração entre ferramentas de pentest
 
-> ⚠️ **Importante:** Este tipo de prática deve ser realizado exclusivamente em ambientes autorizados e controlados.
-
 ---
 
 ## ⚙️ 1. Aprender como utilizar o Medusa
 
 O Medusa é uma ferramenta robusta para execução de ataques de autenticação via força bruta em diversos protocolos.
 
-### 🔧 Comando Base
+### Comando Base
 
 ```bash
 medusa -h X.X.X.X \
@@ -29,7 +27,7 @@ medusa -h X.X.X.X \
 -t 6
 ```
 
-### 📌 Parâmetros explicados
+### Parâmetros explicados
 
 * `-h` → Define o alvo (host)
 * `-U` → Arquivo contendo lista de usuários
@@ -39,7 +37,7 @@ medusa -h X.X.X.X \
 
 ---
 
-### ⚡ Boas práticas no uso
+### Boas práticas no uso
 
 * Iniciar com poucas threads (`-t 2` ou `-t 4`) para evitar bloqueios
 * Monitorar respostas do servidor (timeout, reset, bloqueio)
@@ -47,7 +45,7 @@ medusa -h X.X.X.X \
 
 ---
 
-### 🧠 Observações técnicas
+### Observações técnicas
 
 * O Medusa trabalha com **ataques online**, ou seja, depende da resposta do serviço
 * Pode gerar logs úteis para análise posterior
@@ -59,13 +57,13 @@ medusa -h X.X.X.X \
 
 Antes de qualquer tentativa de autenticação, é necessário compreender o terreno.
 
-### 🔍 Utilizando Nmap
+### Utilizando Nmap
 
 ```bash
 nmap -sV -p- X.X.X.X
 ```
 
-### 📌 Explicação
+### Explicação
 
 * `-sV` → Detecta versões dos serviços
 * `-p-` → Escaneia todas as portas (1–65535)
@@ -83,7 +81,7 @@ Identificar serviços como:
 
 ---
 
-### 🧠 Dica estratégica
+### Dica estratégica
 
 Cada serviço aberto representa uma possível porta de entrada.
 O olhar atento transforma um simples scan em um mapa de oportunidades.
@@ -94,7 +92,7 @@ O olhar atento transforma um simples scan em um mapa de oportunidades.
 
 Com o serviço identificado, inicia-se o ataque de força bruta.
 
-### 🔧 Exemplo
+### Exemplo
 
 ```bash
 medusa -h X.X.X.X -U users.txt -P passwords.txt -M ftp
@@ -109,7 +107,7 @@ medusa -h X.X.X.X -U users.txt -P passwords.txt -M ftp
 
 ---
 
-### 🔍 Após o acesso
+### Após o acesso
 
 ```bash
 ftp X.X.X.X
@@ -121,7 +119,7 @@ ftp X.X.X.X
 
 ---
 
-### ⚠️ Possíveis achados
+### Possíveis achados
 
 * Arquivos de configuração
 * Credenciais armazenadas
@@ -135,7 +133,7 @@ O DVWA é uma aplicação propositalmente vulnerável, ideal para estudo.
 
 ---
 
-### 🔎 Enumeração com enum4linux
+### Enumeração com enum4linux
 
 ```bash
 enum4linux -a X.X.X.X
@@ -151,7 +149,7 @@ enum4linux -a X.X.X.X
 
 ---
 
-### 🔐 Possível acesso
+### Possível acesso
 
 Após obter usuários:
 
@@ -160,7 +158,7 @@ Após obter usuários:
 
 ---
 
-### 🧠 Insight
+### Insight
 
 Muitas vezes, a falha não está na complexidade técnica, mas na **reutilização descuidada de credenciais**.
 
@@ -172,7 +170,7 @@ O protocolo SMB é frequentemente negligenciado, mas guarda valiosas portas aber
 
 ---
 
-### 🔍 Descobrir usuários
+### Descobrir usuários
 
 ```bash
 enum4linux -U X.X.X.X
@@ -180,7 +178,7 @@ enum4linux -U X.X.X.X
 
 ---
 
-### 🔧 Testar acesso com Medusa
+### Testar acesso com Medusa
 
 ```bash
 medusa -h X.X.X.X -U users.txt -P passwords.txt -M smbnt
@@ -196,7 +194,7 @@ medusa -h X.X.X.X -U users.txt -P passwords.txt -M smbnt
 
 ---
 
-### 📂 Após o acesso
+### Após o acesso
 
 Utilizar:
 
@@ -206,7 +204,7 @@ smbclient -L //X.X.X.X
 
 ---
 
-### ⚠️ Possíveis riscos explorados
+### Possíveis riscos explorados
 
 * Compartilhamentos abertos
 * Falta de autenticação
@@ -214,7 +212,7 @@ smbclient -L //X.X.X.X
 
 ---
 
-## 🧱 Conclusão Estratégica
+## Conclusão Estratégica
 
 Este exercício revela uma verdade silenciosa, porém constante:
 
@@ -227,6 +225,16 @@ A combinação de:
 * Falta de monitoramento
 
 abre caminhos que ferramentas como o Medusa apenas percorrem.
+
+---
+
+### Links
+
+- Para visualizar o **guia** sobre ataques de Brute Force, basta clicar *[aqui](./Guide.md)*.
+
+- Para visualizar como **configurar a VM**, basta clicar *[aqui](./Config_VM.md)*.
+
+- Para visualizar a **resolução** do exercício, basta clicar *[aqui](./Report.md)*.
 
 ---
 
