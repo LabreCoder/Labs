@@ -12,19 +12,19 @@ Ataques de força bruta consistem na tentativa sistemática de descobrir credenc
 
 São ataques baseados em **listas de senhas prontas** (*wordlists*) compostas por combinações comuns, vazadas ou previsíveis.
 
-* 🔧 **Como funciona:**
+* **Como funciona:**
   A ferramenta percorre uma lista de palavras testando cada uma como senha até encontrar correspondência.
 
-* 📚 **Exemplos de wordlists populares:**
+* **Exemplos de wordlists populares:**
 
   * `rockyou.txt`
   * `SecLists`
   * Listas personalizadas geradas com base no alvo
 
-* ⚠️ **Ponto fraco explorado:**
+* **Ponto fraco explorado:**
   Usuários que utilizam senhas simples ou comuns.
 
-* 🛡️ **Defesa:**
+* **Defesa:**
 
   * Uso de senhas complexas e únicas
   * Políticas de senha robustas
@@ -36,24 +36,24 @@ São ataques baseados em **listas de senhas prontas** (*wordlists*) compostas po
 
 Testa **todas as combinações possíveis de caracteres**, sem depender de listas pré-existentes.
 
-* 🔧 **Como funciona:**
+* **Como funciona:**
   Geração automática de combinações possíveis com base em:
 
   * Tamanho da senha
   * Conjunto de caracteres (letras, números, símbolos)
 
-* 📈 **Complexidade:**
+* **Complexidade:**
   O número de combinações cresce exponencialmente:
 
   * Senha de 6 caracteres → milhares de combinações
   * Senha de 12 caracteres → bilhões/trilhões de combinações
 
-* ⚠️ **Limitações:**
+* **Limitações:**
 
   * Alto consumo de tempo e recursos computacionais
   * Pode ser inviável contra senhas longas
 
-* 🛡️ **Defesa:**
+* **Defesa:**
 
   * Limite de tentativas (lockout)
   * CAPTCHA
@@ -65,17 +65,17 @@ Testa **todas as combinações possíveis de caracteres**, sem depender de lista
 
 Combina **ataque de dicionário + variações inteligentes**.
 
-* 🔧 **Como funciona:**
+* **Como funciona:**
   Parte de uma palavra base e aplica modificações:
 
   * Adição de números (`senha123`)
   * Substituições (`@` no lugar de `a`)
   * Prefixos/sufixos (`!senha`, `senha2024`)
 
-* 🧠 **Base conceitual:**
+* **Base conceitual:**
   Explora padrões humanos previsíveis na criação de senhas.
 
-* ⚙️ **Mangling Rules (Regras de Mutação):**
+* **Mangling Rules (Regras de Mutação):**
   Transformações aplicadas automaticamente às palavras da lista:
 
   * Uppercase/lowercase
@@ -90,18 +90,18 @@ Combina **ataque de dicionário + variações inteligentes**.
 
 Explora **credenciais reais vazadas** em ataques anteriores.
 
-* 🔧 **Como funciona:**
+* **Como funciona:**
 
   * Utiliza bases de dados vazadas (ex: dumps de grandes serviços)
   * Testa automaticamente em diversos sistemas
 
-* ⚠️ **Ponto crítico:**
+* **Ponto crítico:**
   Reutilização de senha entre diferentes plataformas.
 
-* 📊 **Cenário comum:**
+* **Cenário comum:**
   Um vazamento em um fórum pode comprometer contas bancárias ou e-mails se o usuário reutilizar a senha.
 
-* 🛡️ **Defesa:**
+* **Defesa:**
 
   * Uso de senhas únicas por serviço
   * MFA obrigatório
@@ -113,15 +113,15 @@ Explora **credenciais reais vazadas** em ataques anteriores.
 
 Testa **uma mesma senha comum em múltiplos usuários**, evitando bloqueios.
 
-* 🔧 **Como funciona:**
+* **Como funciona:**
 
   * Escolhe senhas populares (`123456`, `Empresa@123`)
   * Testa contra vários usuários com baixa frequência
 
-* 🎯 **Objetivo:**
+* **Objetivo:**
   Evitar sistemas de bloqueio por tentativa excessiva em uma única conta.
 
-* 🛡️ **Defesa:**
+* **Defesa:**
 
   * Políticas que bloqueiam IPs suspeitos
   * Monitoramento de tentativas distribuídas
@@ -133,22 +133,22 @@ Testa **uma mesma senha comum em múltiplos usuários**, evitando bloqueios.
 
 Realizado após obtenção de hashes de senha.
 
-* 🔧 **Como funciona:**
+* **Como funciona:**
 
   * O atacante trabalha localmente, sem limitação de tentativas
   * Utiliza GPUs para acelerar o processo
 
-* 🔐 **Tipos de hashes comuns:**
+* **Tipos de hashes comuns:**
 
   * MD5 (fraco)
   * SHA-1 (obsoleto)
   * SHA-256
   * Bcrypt (mais seguro)
 
-* ⚠️ **Risco elevado:**
+* **Risco elevado:**
   Sem mecanismos de bloqueio, o atacante pode testar milhões de combinações por segundo.
 
-* 🛡️ **Defesa:**
+* **Defesa:**
 
   * Uso de hashing com salt
   * Algoritmos fortes (bcrypt, Argon2)
@@ -189,6 +189,16 @@ Realizado após obtenção de hashes de senha.
 * **Wordlists:** Como gerar listas customizadas com base em OSINT
 * **Rainbow Tables:** Conceito, limitações e impacto do uso de *salt*
 * **Ataques distribuídos (Botnets):** Uso em força bruta em larga escala
+
+---
+
+### Links
+
+- Para visualizar os **objetivos** do exercício, basta clicar *[aqui](./README.md)*.
+
+- Para visualizar como **configurar a VM**, basta clicar *[aqui](./Config_VM.md)*.
+
+- Para visualizar a **resolução** do exercício, basta clicar *[aqui](./Report.md)*.
 
 ---
 
