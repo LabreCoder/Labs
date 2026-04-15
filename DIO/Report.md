@@ -347,4 +347,14 @@ Reconnecting with SMB1 for workgroup listing.
 
 ---
 
+### Links
+
+- Para visualizar os **objetivos** do exercício, basta clicar *[aqui](./README.md)*.
+
+- Para visualizar o **guia** sobre ataques de Brute Force, basta clicar *[aqui](./Guide.md)*.
+
+- Para visualizar como **configurar a VM**, basta clicar *[aqui](./Config_VM.md)*.
+
+---
+
 *Organizado por [João Victor Labre/LabreCoder](https://github.com/LabreCoder)*
